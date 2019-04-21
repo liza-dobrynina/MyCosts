@@ -9,6 +9,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".allCategoriesActivity"
+            android:label="Все категории">
+            <intent-filter>
+                <action android:name=".allCategoriesActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".reportActivity"
+            android:label="Отчет">
+            <intent-filter>
+                <action android:name=".reportActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".allExpensesActivity"
+            android:label="Все расходы">
+            <intent-filter>
+                <action android:name=".allExpensesActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewExpenseActivity"
+            android:label="Добавить расход">
+            <intent-filter>
+                <action android:name=".NewExpenseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

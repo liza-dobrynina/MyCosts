@@ -1,7 +1,9 @@
 package com.example.mycosts;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,9 +28,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setInitialData();
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.categories);
-        DataAdapter adapter = new DataAdapter(this, categories);
-        recyclerView.setAdapter(adapter);
+
+//        RecyclerView recyclerView = findViewById(R.id.categories);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        DataAdapter adapter = new DataAdapter(this, categories);
+
+//        recyclerView.setAdapter(adapter);
+    }
+
+    public void newExpenseClick(View v){
+        Intent intent = new Intent(".NewExpenseActivity");
+        startActivity(intent);
+}
+
+    public void reportClick(View v){
+        Intent intent = new Intent(".reportActivity");
+        startActivity(intent);
+    }
+
+    public void allCategoriesClick(View v){
+        Intent intent = new Intent(".allCategoriesActivity");
+        startActivity(intent);
+    }
+    public void allExpensesClick(View v){
+        Intent intent = new Intent(".allExpensesActivity");
+        startActivity(intent);
     }
 
     private void setInitialData(){

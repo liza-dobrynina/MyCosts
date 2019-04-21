@@ -4,35 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/newExpense"
-        android:layout_width="0dp"
-        android:layout_height="165dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginRight="115dp"
-        android:background="#33D33B"
-        android:onClick="newExpenseClick"
-        android:text="Добавить расход"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/report"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/allExpenses" />
+    tools:context=".allCategoriesActivity">
 
     <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="395dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="381dp"
+        android:id="@+id/tableLayout2"
+        android:layout_width="403dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="8dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
-        app:layout_constraintBottom_toTopOf="@+id/allCategories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <TableRow
             android:background="#cccccc"
@@ -49,14 +32,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Tекущий месяц"
+                android:text="Порог"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Порог"
+                android:text="Изменить"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -73,14 +56,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="2340"
+                android:text="15000"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="15000"
+                android:text="изменить"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -97,14 +80,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="8000"
+                android:text="-"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="-"
+                android:text="Изменить"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -121,57 +104,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="5990"
+                android:text="10000"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="10000"
+                android:text="изменить"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
+
+
     </TableLayout>
-
-    <Button
-        android:id="@+id/report"
-        android:layout_width="91dp"
-        android:layout_height="165dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="reportClick"
-        android:text="Отчёт"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/allExpenses"
-        android:layout_width="0dp"
-        android:layout_height="165dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:onClick="allExpensesClick"
-        android:text="Все расходы"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/newExpense"
-        app:layout_constraintEnd_toStartOf="@+id/newExpense"
-        app:layout_constraintStart_toEndOf="@+id/allCategories" />
-
-    <Button
-        android:id="@+id/allCategories"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="allCategoriesClick"
-        android:text="Категории"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/allExpenses"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </android.support.constraint.ConstraintLayout>
