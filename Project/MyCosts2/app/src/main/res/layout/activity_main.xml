@@ -6,33 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/newExpense"
-        android:layout_width="0dp"
-        android:layout_height="165dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginRight="115dp"
-        android:background="#33D33B"
-        android:onClick="newExpenseClick"
-        android:text="Добавить расход"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/report"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/allExpenses" />
-
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="395dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="381dp"
+        android:layout_width="350dp"
+        android:layout_height="279dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
-        app:layout_constraintBottom_toTopOf="@+id/allCategories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="31dp">
 
         <TableRow
             android:background="#cccccc"
@@ -133,45 +113,49 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/report"
-        android:layout_width="91dp"
-        android:layout_height="165dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="374dp"
+        android:layout_height="95dp"
         android:layout_marginBottom="16dp"
-        android:onClick="reportClick"
-        android:text="Отчёт"
-        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:layout_editor_absoluteX="31dp">
 
-    <Button
-        android:id="@+id/allExpenses"
-        android:layout_width="0dp"
-        android:layout_height="165dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:onClick="allExpensesClick"
-        android:text="Все расходы"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/newExpense"
-        app:layout_constraintEnd_toStartOf="@+id/newExpense"
-        app:layout_constraintStart_toEndOf="@+id/allCategories" />
+        <Button
+            android:id="@+id/allCategories"
+            android:layout_width="85dp"
+            android:layout_height="93dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:onClick="allCategoriesClick"
+            android:text="Катего рии"
+            android:textSize="12sp" />
 
-    <Button
-        android:id="@+id/allCategories"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="allCategoriesClick"
-        android:text="Категории"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/allExpenses"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        <Button
+            android:id="@+id/allExpenses"
+            android:layout_width="85dp"
+            android:layout_height="93dp"
+            android:onClick="allExpensesClick"
+            android:text="Все расходы"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/newExpense"
+            android:layout_width="85dp"
+            android:layout_height="93dp"
+            android:background="#33D33B"
+            android:onClick="newExpenseClick"
+            android:text="Добавить расход"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/report"
+            android:layout_width="85dp"
+            android:layout_height="93dp"
+            android:onClick="reportClick"
+            android:text="Отчёт"
+            android:textSize="12sp" />
+
+    </TableRow>
 
 </android.support.constraint.ConstraintLayout>

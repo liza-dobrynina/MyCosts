@@ -8,9 +8,10 @@
 
     <TableLayout
         android:id="@+id/tableLayout2"
-        android:layout_width="403dp"
-        android:layout_height="175dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="329dp"
+        android:layout_height="217dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +64,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="изменить"
+                android:text="Изменить"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -111,7 +112,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="изменить"
+                android:text="Изменить"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 

@@ -8,9 +8,11 @@
 
     <TableLayout
         android:id="@+id/tableLayout2"
-        android:layout_width="409dp"
-        android:layout_height="716dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="335dp"
+        android:layout_height="365dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
         app:layout_constraintStart_toStartOf="parent"
