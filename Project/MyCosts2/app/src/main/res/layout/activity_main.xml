@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TableLayout
+
+    <!--<TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="350dp"
         android:layout_height="279dp"
@@ -111,9 +112,9 @@
                 android:text="10000"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
-    </TableLayout>
+    </TableLayout>-->
 
-    <TableRow
+   <!-- <TableRow
         android:id="@+id/tableRow"
         android:layout_width="374dp"
         android:layout_height="95dp"
@@ -156,6 +157,8 @@
             android:text="Отчёт"
             android:textSize="12sp" />
 
-    </TableRow>
+    </TableRow>-->
+
+
 
 </android.support.constraint.ConstraintLayout>
