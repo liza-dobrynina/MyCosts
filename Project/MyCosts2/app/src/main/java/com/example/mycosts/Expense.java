@@ -5,6 +5,7 @@ import android.icu.util.LocaleData;
 
 public class Expense {
 
+    private Integer id;
     private String date;
     private Integer sum;
     private Category category;
@@ -14,9 +15,24 @@ public class Expense {
         this.date = date;
         this.sum = sum;
         this.category = category;
+
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setSum(Integer sum) {
+        this.sum = sum;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Integer getSum(){
         return sum;
@@ -26,11 +42,12 @@ public class Expense {
         return category;
     }
 
-    public void changeExpense(String date, Integer sum, Category category){
+    public Integer getId() {
+        return id;
+    }
 
-        this.date = date;
-        this.sum = sum;
-        this.category = category;
+    public String getDate() {
+        return date;
     }
 }
 

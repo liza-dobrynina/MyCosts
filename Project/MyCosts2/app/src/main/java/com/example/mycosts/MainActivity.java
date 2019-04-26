@@ -18,8 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<Category> categories = new ArrayList<>();
-    ArrayList<Expense> expenses = new ArrayList<>();
+
     System system = new System();
 
 
@@ -27,13 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setInitialData();
 
-//        RecyclerView recyclerView = findViewById(R.id.categories);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        DataAdapter adapter = new DataAdapter(this, categories);
-
-//        recyclerView.setAdapter(adapter);
     }
 
     public void newExpenseClick(View v){
@@ -55,12 +48,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void setInitialData(){
-        categories.add(new Category("Супермаркеты", 5000));
-        categories.add(new Category("Красота и здоровье", 2000));
-        categories.add(new Category("Рестораны и кафе", 3000));
-        categories.add(new Category("Одежда и аксессуары", 10000));
-        categories.add(new Category("Коммунальные платежи", 5000));
-        system.addExpense(expenses, categories.get(0), "Пятерочка", "5.12.2019 15:40", 100);
-    }
+
 }

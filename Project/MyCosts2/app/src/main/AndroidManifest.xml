@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".NewCategoryActivity"></activity>
+        <activity android:name=".ChangeExpenseActivity" />
+        <activity android:name=".ChangeCategoryActivity" />
         <activity
             android:name=".allCategoriesActivity"
             android:label="Все категории">

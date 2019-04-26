@@ -3,37 +3,41 @@ package com.example.mycosts;
 import java.util.ArrayList;
 
 public class Category {
-
+    private  Integer id;
     private String name;
     private Integer maxSum;
-    private Integer nowSum;
+
 
     public Category(String name, int maxSum) {
         this.name = name;
         this.maxSum = maxSum;
-        this.nowSum = null;
+
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
-        return this.name;
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getMaxSum() {
         return maxSum;
     }
 
-    public Integer getNowSum() {
-        return nowSum;
-    }
-
-    public void setNowSum(Integer value) {
-        this.nowSum = nowSum + value;
-    }
-
-    public  void changeCategory(String newName, Integer newSum){
-        this.name = newName;
-        this.maxSum = newSum;
+    public void setMaxSum(Integer maxSum) {
+        this.maxSum = maxSum;
     }
 }
+
 
 
