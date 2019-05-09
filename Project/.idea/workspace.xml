@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6397d45-c35e-4ff1-94b7-021706f9fa69" name="Default Changelist" comment="" />
+    <list default="true" id="d6397d45-c35e-4ff1-94b7-021706f9fa69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MyCosts2/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyCosts2/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/app/src/main/java/com/example/mycosts/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyCosts2/app/src/main/java/com/example/mycosts/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/app/src/main/java/com/example/mycosts/allExpensesActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/app/src/main/res/layout/activity_all_expenses.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyCosts2/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyCosts2/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MyCosts2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyCosts2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MyCosts2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,28 +32,6 @@
         <projects_view />
       </state>
     </system>
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-247605685">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -71,7 +67,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,11 +89,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/MyCosts2" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -114,6 +111,7 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
@@ -136,8 +134,9 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
+      <window_info id="Resources Explorer" />
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33509833" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.34039333" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -148,16 +147,13 @@
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="4" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Build" order="4" visible="true" weight="0.3289689" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
     </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/MyCosts2/app/src/main/java/com/example/mycosts/MainActivity.java">
