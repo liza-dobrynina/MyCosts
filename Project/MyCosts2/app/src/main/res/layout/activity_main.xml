@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,170 +7,32 @@
     tools:context=".MainActivity">
 
 
-    <TableLayout
-        android:id="@+id/tableLayout2"
-        android:layout_width="335dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="190dp"
-        android:shrinkColumns="*"
-        android:stretchColumns="*"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <TableRow
-            android:background="#cccccc"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Дата"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Категория"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Сумма"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-
-        <TableRow android:padding="5dp">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="10.04.2019"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Продукты"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="980"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-
-        <TableRow android:padding="5dp">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="12.04.2019"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Продукты"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="82"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-
-        <TableRow android:padding="5dp">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="18.04.2019"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Дом"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="8000"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-
-
-    </TableLayout>
-
-    <TableRow
-        android:id="@+id/tableRow"
-        android:layout_width="374dp"
-        android:layout_height="95dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <Button
-            android:id="@+id/allCategories"
-            android:layout_width="105dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:onClick="allCategoriesClick"
-            android:text="Категории"
-            android:textSize="12sp" />
-
-
-        <Button
-            android:id="@+id/report"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:onClick="reportClick"
-            android:text="Отчёт"
-            android:textSize="12sp" />
-
-
-    </TableRow>
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="153dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/bottom_navigation"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="30dp"
+
+        android:layout_marginBottom="70dp"
         android:clickable="true"
         app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_add_black_24dp" />
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
 
 
+        app:menu="@menu/menu_bottom_navigation" />
 
-</android.support.constraint.ConstraintLayout >
+
+</RelativeLayout>

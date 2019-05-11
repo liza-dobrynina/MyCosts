@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/all_expense"
+        android:icon="@drawable/ic_first"
+        android:title="Расходы"/>
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/ic_second"
+        android:title="Категории"/>
+    <item
+        android:id="@+id/report"
+        android:icon="@drawable/ic_third"
+        android:title="Отчет"/>
+
+</menu>
