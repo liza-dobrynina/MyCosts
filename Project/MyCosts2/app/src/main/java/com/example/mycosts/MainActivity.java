@@ -10,12 +10,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
+    public static final String CATEGORIES = "CATEGORIES";
+    private ArrayList<Category> categories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,27 +32,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    switch (menuItem.getItemId()){
-                        case R.id.category:
-                            Intent intent = new Intent(".allCategoriesActivity");
-                            startActivity(intent);
-                            break;
-                        case R.id.report:
-                            Intent intent2 = new Intent(".reportActivity");
-                            startActivity(intent2);
-                            break;
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
+                            case R.id.category:
+                                Intent intent = new Intent(MainActivity.this, AllCategoriesActivity.class);
+                                intent.putExtra(CATEGORIES, categories);
+                                startActivity(intent);
+                                break;
+                            case R.id.report:
+                                Intent intent2 = new Intent(".reportActivity");
+                                startActivity(intent2);
+                                break;
+                        }
+                        return false;
                     }
-                    return false;
-                }
-            });
+                });
 
+        fillCategories();
     }
 
+    private void fillCategories() {
+        categories = new ArrayList<>();
+        categories.add(new Category("Еда", 1000));
+        categories.add(new Category("Развлечения", 5000));
+        categories.add(new Category("Всякое", 500));
+    }
 
 
 //    public void reportClick(View v){

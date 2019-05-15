@@ -1,8 +1,8 @@
 package com.example.mycosts;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Category {
+public class Category implements Serializable {
     private  Integer id;
     private String name;
     private Integer maxSum;

@@ -13,7 +13,7 @@
         <activity android:name=".ChangeExpenseActivity" />
         <activity android:name=".ChangeCategoryActivity" />
         <activity
-            android:name=".allCategoriesActivity"
+            android:name=".AllCategoriesActivity"
             android:label="Все категории">
             <intent-filter>
                 <action android:name=".allCategoriesActivity" />
