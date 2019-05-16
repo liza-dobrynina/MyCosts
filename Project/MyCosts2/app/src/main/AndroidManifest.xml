@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".App"
         android:icon="@mipmap/ic_launcher"
         android:label="Мои расходы"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -12,24 +13,7 @@
         <activity android:name=".NewCategoryActivity" />
         <activity android:name=".ChangeExpenseActivity" />
         <activity android:name=".ChangeCategoryActivity" />
-        <activity
-            android:name=".AllCategoriesActivity"
-            android:label="Все категории">
-            <intent-filter>
-                <action android:name=".allCategoriesActivity" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".reportActivity"
-            android:label="Отчет">
-            <intent-filter>
-                <action android:name=".reportActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".NewExpenseActivity"
             android:label="Добавить расход">
