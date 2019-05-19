@@ -1,13 +1,10 @@
 package com.example.mycosts;
 
-import android.app.Activity;
 import android.app.Dialog;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,7 +25,7 @@ public class AllCategoriesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_all_categories, container, false);
+        View view = inflater.inflate(R.layout.fragment_all_categories, container, false);
         categories = App.getCategories();
         recyclerView = view.findViewById(R.id.recyclerView);
         addCategory = view.findViewById(R.id.addCategory);
@@ -49,7 +46,7 @@ public class AllCategoriesFragment extends Fragment {
 
     public void addNewCategoryClick(View v) {
         if (getActivity() != null) {
-            final Dialog dialog = new Dialog(getActivity());
+            final Dialog dialog = new Dialog(getActivity(), R.style.Dialog);
             dialog.setTitle("Добавить категорию");
             dialog.setContentView(R.layout.dialog_category);
             final EditText categoryName = dialog.findViewById(R.id.categoryName);
@@ -73,14 +70,4 @@ public class AllCategoriesFragment extends Fragment {
             dialog.show();
         }
     }
-
-    public void changeCategoryClick(View v) {
-
-    }
-
-    public void deleteCategoryClick(View v) {
-
-    }
-
-
 }

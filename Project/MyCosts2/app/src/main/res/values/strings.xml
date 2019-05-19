@@ -11,4 +11,8 @@
     <string name="categoryName">Название категории</string>
     <string name="categoryMaxSum">Порог</string>
     <string name="save">Сохранить</string>
+    <string name="expenseComment">Комментарий</string>
+    <string name="dateFormat">Дата (ДД.ММ.ГГГГ)</string>
+    <string name="expenseSum">Сумма</string>
+    <string name="categoryHint">Категория:</string>
 </resources>

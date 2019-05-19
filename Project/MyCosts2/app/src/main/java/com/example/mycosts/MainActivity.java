@@ -1,18 +1,12 @@
 package com.example.mycosts;
 
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.view.MenuItem;
-import android.view.View;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             switch (menuItem.getItemId()) {
                 case R.id.all_expense:
-
+                    fragmentTransaction.
+                            replace(R.id.fragmentPlace, new AllExpensesFragment())
+                            .commit();
                     return true;
                 case R.id.category:
                     fragmentTransaction.
@@ -59,10 +55,9 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(listener);
+        bottomNavigationView.setSelectedItemId(R.id.all_expense);
 
     }
-
-
 
 
 //    public void reportClick(View v){

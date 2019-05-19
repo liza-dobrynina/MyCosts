@@ -2,26 +2,25 @@ package com.example.mycosts;
 
 import android.app.Application;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class App extends Application {
 
-    private static ArrayList<Category> categories;
+    private static int expenseId = 0;
+    private static List<Category> categories;
+
+    public static List<Category> getCategories() {
+        return categories;
+    }
+
+    public static int getNextExpenseId() {
+        expenseId++;
+        return expenseId;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        fillCategories();
-    }
-
-    private void fillCategories() {
-        categories = new ArrayList<>();
-        categories.add(new Category("Еда", 1000));
-        categories.add(new Category("Развлечения", 5000));
-        categories.add(new Category("Всякое", 500));
-    }
-
-    public static ArrayList<Category> getCategories() {
-        return categories;
+        categories = ModelUtils.fillCategories();
     }
 }

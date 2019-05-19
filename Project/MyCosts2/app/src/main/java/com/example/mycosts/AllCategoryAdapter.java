@@ -70,11 +70,11 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
 
     private void deleteCategory(int layoutPosition) {
         categories.remove(layoutPosition);
-        notifyItemChanged(layoutPosition);
+        notifyItemRemoved(layoutPosition);
     }
 
     private void editCategory(final Category category, final int layoutPosition) {
-        final Dialog dialog = new Dialog(context);
+        final Dialog dialog = new Dialog(context, R.style.Dialog);
         dialog.setTitle("Изменить категорию");
         dialog.setContentView(R.layout.dialog_category);
 

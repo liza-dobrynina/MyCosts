@@ -8,18 +8,36 @@
     android:paddingLeft="30dp"
     android:paddingRight="30dp">
 
-    <EditText
-        android:id="@+id/categoryName"
+    <TextView
+        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/categoryName" />
+        android:text="@string/categoryHint" />
+
+    <Spinner
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/categoryMaxSum"
+        android:id="@+id/expenseSum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/categoryMaxSum"
-        android:inputType="number"/>
+        android:hint="@string/expenseSum"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/expenseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/dateFormat"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/expenseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/expenseComment" />
 
     <Button
         android:id="@+id/saveButton"
