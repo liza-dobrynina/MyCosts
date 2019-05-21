@@ -10,20 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewCategoryActivity" />
-        <activity android:name=".ChangeExpenseActivity" />
-        <activity android:name=".ChangeCategoryActivity" />
 
-        <activity
-            android:name=".NewExpenseActivity"
-            android:label="Добавить расход">
-            <intent-filter>
-                <action android:name=".NewExpenseActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

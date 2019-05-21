@@ -1,26 +1,27 @@
 package com.example.mycosts;
 
 import android.app.Application;
+import android.arch.persistence.room.Room;
 
-import java.util.List;
+import com.example.mycosts.db.MyCostsDatabase;
 
 public class App extends Application {
 
-    private static int expenseId = 0;
-    private static List<Category> categories;
-
-    public static List<Category> getCategories() {
-        return categories;
-    }
-
-    public static int getNextExpenseId() {
-        expenseId++;
-        return expenseId;
-    }
+    public static App instance;
+    private MyCostsDatabase database;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        categories = ModelUtils.fillCategories();
+        instance = this;
+        database = Room.databaseBuilder(this, MyCostsDatabase.class, "mycosts.db").build();
+    }
+
+    public static App getInstance() {
+        return instance;
+    }
+
+    public MyCostsDatabase getDatabase() {
+        return database;
     }
 }
