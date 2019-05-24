@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.Spinner;
 
 import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.db.entities.CategorySum;
 import com.example.mycosts.db.entities.ExpenseWithCategory;
 
 import java.util.List;
@@ -24,4 +25,6 @@ public interface AllExpenseContract {
     void notifyDataSetChanged();
 
     void changeData(List<ExpenseWithCategory> expenseWithCategories);
+
+    void showWarning(CategorySum categorySum);
 }

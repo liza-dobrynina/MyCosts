@@ -4,7 +4,10 @@ import android.os.AsyncTask;
 
 import com.example.mycosts.App;
 import com.example.mycosts.db.MyCostsDatabase;
+import com.example.mycosts.db.dao.CategoryDAO;
 import com.example.mycosts.db.dao.ExpenseDAO;
+import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.db.entities.CategorySum;
 import com.example.mycosts.db.entities.Expense;
 import com.example.mycosts.db.entities.ExpenseWithCategory;
 import com.example.mycosts.ui.categories.AllCategoriesModel;
@@ -28,7 +31,7 @@ public class AllExpenseModel {
         getAllCategoriesAsyncTask.execute();
     }
 
-    public void updateExpense(Expense expense, AllCategoriesModel.CompleteCallback callback){
+    public void updateExpense(Expense expense, AllCategoriesModel.CompleteCallback callback) {
         UpdateExpenseAsyncTask updateExpenseAsyncTask = new UpdateExpenseAsyncTask(callback);
         updateExpenseAsyncTask.execute(expense);
     }
@@ -38,8 +41,17 @@ public class AllExpenseModel {
         deleteExpenseAsyncTask.execute(expense);
     }
 
+    public void getAllExpenseSum(Long categoryId, GetAllExpenseSumByCategoryCallback callback){
+        GetSumAllExpenseAsyncTask getSumAllExpenseAsyncTask = new GetSumAllExpenseAsyncTask(callback);
+        getSumAllExpenseAsyncTask.execute(categoryId);
+    }
+
     interface GetAllExpensesCallback {
         void onLoad(List<ExpenseWithCategory> expenses);
+    }
+
+    interface GetAllExpenseSumByCategoryCallback {
+        void onLoad(CategorySum sum);
     }
 
     static class GetAllExpensesAsyncTasks extends AsyncTask<Void, Void, List<ExpenseWithCategory>> {
@@ -144,6 +156,30 @@ public class AllExpenseModel {
             Expense expense = expenses[0];
             expenseDAO.update(expense);
             return null;
+        }
+    }
+
+    static class GetSumAllExpenseAsyncTask extends AsyncTask<Long, Void, CategorySum> {
+        GetAllExpenseSumByCategoryCallback callback;
+
+        GetSumAllExpenseAsyncTask(GetAllExpenseSumByCategoryCallback callback) {
+            this.callback = callback;
+        }
+
+        @Override
+        protected void onPostExecute(CategorySum sum) {
+            super.onPostExecute(sum);
+            if (callback != null) {
+                callback.onLoad(sum);
+            }
+        }
+
+        @Override
+        protected CategorySum doInBackground(Long... longs) {
+            MyCostsDatabase database = App.getInstance().getDatabase();
+            ExpenseDAO expenseDAO = database.expenseDAO();
+            CategorySum categorySum = expenseDAO.getExpenseSumByCategory(longs[0]);
+            return categorySum;
         }
     }
 }

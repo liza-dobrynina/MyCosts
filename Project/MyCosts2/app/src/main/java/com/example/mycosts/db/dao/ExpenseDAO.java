@@ -6,6 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
+import com.example.mycosts.db.entities.CategorySum;
 import com.example.mycosts.db.entities.Expense;
 import com.example.mycosts.db.entities.ExpenseWithCategory;
 
@@ -27,4 +28,11 @@ public interface ExpenseDAO {
             "e.name as 'expense_name', e.sum as 'expense_sum', e.date as 'expense_date', e.category_id as 'expense_category_id' " +
             "FROM category c inner join expense e on e.category_id = c.id order by e.date desc")
     List<ExpenseWithCategory> getAllExpensesWithCategory();
+
+    @Query("select sum(e.sum) from expense e where e.category_id = :categoryId")
+    Integer getAllExpenseSumByCategory(Long categoryId);
+
+    @Query("select sum(e.sum) as 'actualSum', c.max_sum as 'maxSum' from expense e " +
+            "join category c on c.id = e.category_id where e.category_id = :categoryId")
+    CategorySum getExpenseSumByCategory(Long categoryId);
 }

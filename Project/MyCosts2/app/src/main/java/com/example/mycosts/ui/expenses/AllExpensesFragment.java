@@ -1,5 +1,6 @@
 package com.example.mycosts.ui.expenses;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.widget.Spinner;
 
 import com.example.mycosts.R;
 import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.db.entities.CategorySum;
 import com.example.mycosts.db.entities.Expense;
 import com.example.mycosts.db.entities.ExpenseWithCategory;
 import com.example.mycosts.utils.DateUtils;
@@ -126,5 +128,15 @@ public class AllExpensesFragment extends Fragment implements AllExpenseContract 
     @Override
     public void changeData(List<ExpenseWithCategory> expenseWithCategories) {
         adapter.setExpenses(expenseWithCategories);
+    }
+
+    @Override
+    public void showWarning(CategorySum categorySum) {
+        new AlertDialog.Builder(getContext())
+                .setTitle("Превышен порог")
+                .setMessage(String.format("Превышен порог по категории!\n Сумма расходов: %s\n Порог категории: %s", categorySum.getActualSum(), categorySum.getMaxSum()))
+                .setPositiveButton(android.R.string.ok, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }

@@ -3,6 +3,7 @@ package com.example.mycosts.ui.expenses;
 import android.widget.Spinner;
 
 import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.db.entities.CategorySum;
 import com.example.mycosts.db.entities.Expense;
 import com.example.mycosts.db.entities.ExpenseWithCategory;
 import com.example.mycosts.ui.categories.AllCategoriesModel;
@@ -34,15 +35,26 @@ public class AllExpensePresenter {
         });
     }
 
-    public void addExpense(Expense expense) {
+    public void addExpense(final Expense expense) {
         model.insertExpense(expense, new AllCategoriesModel.CompleteCallback() {
             @Override
             public void onComplete() {
                 loadData();
+                checkExpenseMaxSum(expense);
             }
         });
     }
 
+    private void checkExpenseMaxSum(Expense expense) {
+        model.getAllExpenseSum(expense.getCategoryId(), new AllExpenseModel.GetAllExpenseSumByCategoryCallback() {
+            @Override
+            public void onLoad(CategorySum categorySum) {
+                if (categorySum.getActualSum() > categorySum.getMaxSum()) {
+                    view.showWarning(categorySum);
+                }
+            }
+        });
+    }
 
     public void fillCategories(final Spinner spinner) {
         model.getAllCategories(new AllCategoriesModel.GetAllCategoriesCallback() {
@@ -63,7 +75,7 @@ public class AllExpensePresenter {
         });
     }
 
-    public void updateExpense(Expense expense, final int position, final boolean updateAll) {
+    public void updateExpense(final Expense expense, final int position, final boolean updateAll) {
         model.updateExpense(expense, new AllCategoriesModel.CompleteCallback() {
             @Override
             public void onComplete() {
@@ -75,6 +87,7 @@ public class AllExpensePresenter {
                             view.notifyDataSetChanged();
                         else
                             view.notifyItemChanged(position);
+                        checkExpenseMaxSum(expense);
                     }
                 });
             }

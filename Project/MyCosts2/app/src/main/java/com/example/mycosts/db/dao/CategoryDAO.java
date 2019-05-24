@@ -12,6 +12,7 @@ import java.util.List;
 
 @Dao
 public interface CategoryDAO {
+
     @Query("SELECT * FROM category")
     List<Category> getAll();
 
