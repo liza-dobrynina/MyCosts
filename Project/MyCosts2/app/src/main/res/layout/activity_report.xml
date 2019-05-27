@@ -6,61 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.report.ReportFragment">
 
-    <EditText
-        android:id="@+id/endDate"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="125dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="До"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/generateReport"
-        app:layout_constraintStart_toEndOf="@+id/beginDate"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="280dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="291dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/beginDate"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:srcCompat="?attr/colorPrimary" />
 
-    <EditText
-        android:id="@+id/beginDate"
-        android:layout_width="81dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="78dp"
-        android:layout_marginLeft="78dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
-        android:layout_marginBottom="125dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="С"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/endDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <lecho.lib.hellocharts.view.PieChartView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/generateReport"
-        android:layout_width="0dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginRight="79dp"
-        android:text="Ок"
-        app:layout_constraintBottom_toBottomOf="@+id/endDate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/endDate"
-        tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>

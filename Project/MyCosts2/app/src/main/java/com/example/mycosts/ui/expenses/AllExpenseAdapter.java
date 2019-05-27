@@ -49,7 +49,7 @@ public class AllExpenseAdapter extends RecyclerView.Adapter<AllExpenseAdapter.Vi
         viewHolder.main.setText(String.format("%s %s %s",
                 DateUtils.convertDateToString(expenseWithCategory.getExpense().getDate()),
                 expenseWithCategory.getCategory().getName(),
-                expenseWithCategory.getExpense().getSum()));
+                expenseWithCategory.getExpense().getSum() + " рублей"));
         viewHolder.comment.setText(expenseWithCategory.getExpense().getName());
 
         viewHolder.editButton.setOnClickListener(new View.OnClickListener() {

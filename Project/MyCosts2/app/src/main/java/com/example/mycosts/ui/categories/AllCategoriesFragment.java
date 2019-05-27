@@ -28,6 +28,7 @@ public class AllCategoriesFragment extends Fragment implements AllCategoriesCont
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("Категории");
         View view = inflater.inflate(R.layout.fragment_all_categories, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerView);

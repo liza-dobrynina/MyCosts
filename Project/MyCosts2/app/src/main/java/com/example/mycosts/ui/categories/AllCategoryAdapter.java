@@ -57,7 +57,7 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         final Category category = categories.get(i);
         viewHolder.name.setText(category.getName());
-        viewHolder.maxSum.setText(category.getMaxSum().toString());
+        viewHolder.maxSum.setText("Порог: " + category.getMaxSum().toString() + " рублей");
         viewHolder.editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

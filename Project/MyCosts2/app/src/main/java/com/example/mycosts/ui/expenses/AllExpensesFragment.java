@@ -37,6 +37,7 @@ public class AllExpensesFragment extends Fragment implements AllExpenseContract 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("Мои расходы");
         View view = inflater.inflate(R.layout.fragment_all_expanses, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
         addExpense = view.findViewById(R.id.addExpense);
