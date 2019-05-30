@@ -7,11 +7,13 @@ def findAllCategories():
 
 
 def createCategory(name, maxSum):
-    Category(name=name, maxSum=maxSum).save()
+    newCategory = Category(name=name, maxSum=maxSum)
+    newCategory.save()
+    return newCategory
 
 
 def deleteCategory(id):
-    (Category.select()
+    return (Category.select()
         .where(Category.id == id)
         .get()
         .delete_instance())
@@ -24,14 +26,22 @@ def updateCategory(id, name, maxSum):
     category.name = name
     category.maxSum = maxSum
     category.save()
+    return category
 
 
-def createExpense(name, date, summ, category):
-    Expense(name=name, date=date, summ=summ, category=category).save()
+def findAllExpenses():
+    return list(Expense.select())
+
+
+def createExpense(name, date, summ, categoryId):
+    category = Category.get_by_id(categoryId)
+    newExpense = Expense(name=name, date=date, summ=summ, category=category)
+    newExpense.save()
+    return newExpense
 
 
 def deleteExpense(id):
-    (Expense.select()
+    return (Expense.select()
         .where(Expense.id == id)
         .get()
         .delete_instance())
@@ -45,6 +55,7 @@ def updateExpense(id, name, date, summ, category):
     expense.date = date
     expense.summ = summ
     expense.save()
+    return expense
 
 
 def findAllCategoriesWithExpenses():
@@ -67,4 +78,4 @@ def findExpensesSumWithMaxSumForCategory(category):
         .select(fn.SUM(Expense.sum).alias('actualSum'), Category.maxSum)
         .join(Category, JOIN.INNER)
         .order_by(Category.name))
-    return query.get())
+    return query.get()
