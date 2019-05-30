@@ -29,13 +29,13 @@ public class ReportFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_report, container, false);
         pieChartView = view.findViewById(R.id.chart);
         List pieData = new ArrayList<>();
-        pieData.add(new SliceValue(15, Color.parseColor("#EE82EE")).setLabel("Здоровье 30% "));
-        pieData.add(new SliceValue(25, Color.parseColor("#87CEFA")).setLabel("Супермаркеты 50%"));
-        pieData.add(new SliceValue(10, Color.parseColor("#00FF7F")).setLabel("Развлечения 20%"));
+        pieData.add(new SliceValue(400, Color.parseColor("#EE82EE")).setLabel("Здоровье" + "\n" + "400/2000"));
+        pieData.add(new SliceValue(600, Color.parseColor("#87CEFA")).setLabel("Супермаркеты"  + "\n" + "600/6000"));
+        pieData.add(new SliceValue(1000, Color.parseColor("#00FF7F")).setLabel("Развлечения"  + "\n" + "1000/4000"));
 
         PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasLabels(true).setValueLabelTextSize(14);
-        pieChartData.setHasCenterCircle(true).setCenterText1("").setCenterText1FontSize(20).setCenterText1Color(Color.parseColor("#0097A7"));
+        pieChartData.setHasLabels(true).setValueLabelTextSize(13);
+        pieChartData.setHasCenterCircle(true).setCenterText1("").setCenterText1FontSize(15).setCenterText1Color(Color.parseColor("#0097A7"));
         pieChartView.setPieChartData(pieChartData);
         return view;
     }
