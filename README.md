@@ -12,9 +12,10 @@
 2. Немчанинова Юлия
 
 ### Ссылки:
-- realtimeboard.com: 
-    - функциональная схема: <https://realtimeboard.com/welcomeonboard/eeTFKH5Y3z7Jq7oghvnKguTcSP3QHB2yloqcJ1FKDP6i9IHEa2XRcdU27EYp5TFg>
-	- курсовая работа: <https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/Курсовая%20работа.docx>
-	- ТЗ: <https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/ТЗ.docx>
-	- отчет о проделанной работе: <https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/отчет%20о%20проделанной%20работе.docx>
-- trello.ru: <https://trello.com/b/iNYpPDFK/приложение-мои-расходы>
+- [Курсовая работа](https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/Курсовая%20работа.docx>)
+- [Техническое задание](https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/ТЗ.docx)
+- [trello.ru](https://trello.com/b/iNYpPDFK/приложение-мои-расходы>)
+- [Отчетный документ по ролям]()
+- [План тестирования]()
+- [Тест-кейсы]()
+- [Видео]()
