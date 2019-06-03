@@ -18,5 +18,5 @@
 - [Отчетный документ по ролям]()
 - [План тестирования](https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/План%20тестирования.docx)
 - [Тест-кейсы](https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/ТестКейсы.xlsx)
-- [Видео]()
+- [Видео](https://drive.google.com/open?id=1S2haa6A-gyx8zYf08Rgja4eaXWIopESe)
 - [Swagger](http://157.230.20.13:5000/docs)
