@@ -1,7 +1,7 @@
 from peewee import *
 
 
-db = SqliteDatabase("db/database.db")
+db = SqliteDatabase("db/database.db", pragmas={'foreign_keys': 1})
 db.connect()
 
 
@@ -17,6 +17,6 @@ class Category(BaseModel):
 
 class Expense(BaseModel):
     name = CharField()
-    date = DateTimeField()
-    summ = IntegerField(column_name="sum")
-    category = ForeignKeyField(Category, backref="category")
+    date = DateField()
+    summ = IntegerField(column_name="sum", default=0)
+    category = ForeignKeyField(Category, backref="expenses")

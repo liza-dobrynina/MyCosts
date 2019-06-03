@@ -1,34 +1,40 @@
-package com.example.mycosts.db.entities;
+package com.example.mycosts.api.model;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.TypeConverters;
-
-import com.example.mycosts.db.converters.DateConverter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
-@Entity(foreignKeys = @ForeignKey(entity = Category.class, parentColumns = "id", childColumns = "category_id", onDelete = ForeignKey.CASCADE))
 public class Expense {
 
-    @PrimaryKey
     private Long id;
     private String name;
-    @TypeConverters({DateConverter.class})
     private Date date;
+    @JsonProperty("summ")
     private Integer sum;
-    @ColumnInfo(name = "category_id")
     private Long categoryId;
 
+    private Expense() {}
+
     public Expense(String name, Date date, Integer sum, Long categoryId) {
+        this(null, name, date, sum, categoryId);
+    }
+
+    public Expense(Long id, String name, Date date, Integer sum, Long categoryId) {
+        this.id = id;
         this.name = name;
         this.date = date;
         this.sum = sum;
         this.categoryId = categoryId;
     }
 
+    public static Expense fromExpenseWithCategory(ExpenseWithCategory expenseWithCategory) {
+        return new Expense(
+                expenseWithCategory.getId(),
+                expenseWithCategory.getName(),
+                expenseWithCategory.getDate(),
+                expenseWithCategory.getSum(),
+                expenseWithCategory.getCategory().getId());
+    }
 
     public Integer getSum() {
         return sum;

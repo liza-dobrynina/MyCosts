@@ -2,11 +2,11 @@ package com.example.mycosts.ui.categories;
 
 import android.view.View;
 
-import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.api.model.Category;
 
 import java.util.List;
 
-public interface AllCategoriesContract {
+public interface CategoriesContract {
     void addNewCategory(View v);
 
     void setAdapter(List<Category> categories);

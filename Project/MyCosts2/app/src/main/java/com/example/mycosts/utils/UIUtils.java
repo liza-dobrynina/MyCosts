@@ -3,7 +3,7 @@ package com.example.mycosts.utils;
 import android.content.Context;
 import android.widget.Spinner;
 
-import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.api.model.Category;
 import com.example.mycosts.ui.SpinnerAdapter;
 
 import java.util.List;

@@ -13,11 +13,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mycosts.R;
-import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.api.model.Category;
 
 import java.util.List;
 
-public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.ViewHolder> {
+public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
@@ -37,11 +37,11 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
     private List<Category> categories;
     private LayoutInflater inflater;
     private Context context;
-    private AllCategoriesPresenter presenter;
+    private CategoriesPresenter presenter;
 
-    public AllCategoryAdapter(Context context, AllCategoriesPresenter presenter, List<Category> categories) {
+    public CategoriesAdapter(Context context, CategoriesPresenter presenter, List<Category> categories) {
         this.context = context;
-        inflater = LayoutInflater.from(context);
+        this.inflater = LayoutInflater.from(context);
         this.categories = categories;
         this.presenter = presenter;
     }
@@ -57,7 +57,7 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         final Category category = categories.get(i);
         viewHolder.name.setText(category.getName());
-        viewHolder.maxSum.setText("Порог: " + category.getMaxSum().toString() + " рублей");
+        viewHolder.maxSum.setText("Порог: " + category.getMaxSum() + " рублей");
         viewHolder.editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +75,6 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
 
     private void deleteCategory(int layoutPosition) {
         presenter.deleteCategory(categories.get(layoutPosition), layoutPosition);
-//        categories.remove(layoutPosition);
-//        notifyItemRemoved(layoutPosition);
     }
 
     private void editCategory(final Category category, final int layoutPosition) {
@@ -95,6 +93,7 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
                     category.setName(categoryName.getText().toString());
                 if (!categoryMaxSum.getText().toString().isEmpty())
                     category.setMaxSum(Integer.parseInt(categoryMaxSum.getText().toString()));
+
                 presenter.updateCategory(category, layoutPosition);
                 dialog.cancel();
             }

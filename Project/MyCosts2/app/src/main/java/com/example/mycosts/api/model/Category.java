@@ -1,18 +1,22 @@
-package com.example.mycosts.db.entities;
+package com.example.mycosts.api.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Category {
-    @PrimaryKey
+
     private Long id;
     private String name;
-    @ColumnInfo(name = "max_sum")
     private Integer maxSum;
+    private Integer currentSum;
 
-    public Category(String name, int maxSum) {
+    private Category() {}
+
+    public Category(String name, Integer maxSum) {
         this.name = name;
         this.maxSum = maxSum;
     }
@@ -40,7 +44,12 @@ public class Category {
     public void setMaxSum(Integer maxSum) {
         this.maxSum = maxSum;
     }
+
+    public Integer getCurrentSum() {
+        return currentSum;
+    }
+
+    public void setCurrentSum(Integer currentSum) {
+        this.currentSum = currentSum;
+    }
 }
-
-
-

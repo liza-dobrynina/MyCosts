@@ -1,18 +1,19 @@
-package com.example.mycosts.db.entities;
+package com.example.mycosts.api.model;
 
 public class CategorySum {
-    private Integer actualSum;
+
+    private Integer currentSum;
     private Integer maxSum;
 
     public CategorySum() {
     }
 
-    public Integer getActualSum() {
-        return actualSum;
+    public Integer getCurrentSum() {
+        return currentSum;
     }
 
-    public void setActualSum(Integer actualSum) {
-        this.actualSum = actualSum;
+    public void setCurrentSum(Integer currentSum) {
+        this.currentSum = currentSum;
     }
 
     public Integer getMaxSum() {

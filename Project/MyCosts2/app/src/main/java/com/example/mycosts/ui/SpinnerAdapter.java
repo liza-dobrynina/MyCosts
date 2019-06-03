@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.api.model.Category;
 
 public class SpinnerAdapter extends ArrayAdapter<Category> {
 

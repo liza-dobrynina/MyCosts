@@ -11,27 +11,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.example.mycosts.R;
-import com.example.mycosts.db.entities.Category;
-import com.example.mycosts.db.entities.Expense;
-import com.example.mycosts.db.entities.ExpenseWithCategory;
+import com.example.mycosts.api.model.Category;
+import com.example.mycosts.api.model.Expense;
+import com.example.mycosts.api.model.ExpenseWithCategory;
 import com.example.mycosts.utils.DateUtils;
 
 import java.util.List;
 
-public class AllExpenseAdapter extends RecyclerView.Adapter<AllExpenseAdapter.ViewHolder> {
+public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHolder> {
 
     private List<ExpenseWithCategory> expenses;
     private LayoutInflater inflater;
     private Context context;
-    private AllExpensePresenter presenter;
+    private ExpensesPresenter presenter;
 
-    public AllExpenseAdapter(Context context, AllExpensePresenter presenter, List<ExpenseWithCategory> expenses) {
+    public ExpensesAdapter(Context context, ExpensesPresenter presenter, List<ExpenseWithCategory> expenses) {
         this.context = context;
-        inflater = LayoutInflater.from(context);
+        this.inflater = LayoutInflater.from(context);
         this.presenter = presenter;
         this.expenses = expenses;
     }
@@ -47,10 +46,10 @@ public class AllExpenseAdapter extends RecyclerView.Adapter<AllExpenseAdapter.Vi
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         final ExpenseWithCategory expenseWithCategory = expenses.get(i);
         viewHolder.main.setText(String.format("%s %s %s",
-                DateUtils.convertDateToString(expenseWithCategory.getExpense().getDate()),
+                DateUtils.convertDateToString(expenseWithCategory.getDate()),
                 expenseWithCategory.getCategory().getName(),
-                expenseWithCategory.getExpense().getSum() + " рублей"));
-        viewHolder.comment.setText(expenseWithCategory.getExpense().getName());
+                expenseWithCategory.getSum() + " рублей"));
+        viewHolder.comment.setText(expenseWithCategory.getName());
 
         viewHolder.editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +67,7 @@ public class AllExpenseAdapter extends RecyclerView.Adapter<AllExpenseAdapter.Vi
     }
 
     private void deleteExpense(int position) {
-        presenter.deleteExpense(expenses.get(position).getExpense(), position);
+        presenter.deleteExpense(expenses.get(position), position);
     }
 
     private void editExpense(final ExpenseWithCategory expense, final int layoutPosition) {
@@ -85,7 +84,7 @@ public class AllExpenseAdapter extends RecyclerView.Adapter<AllExpenseAdapter.Vi
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Expense changedExpense = expenses.get(layoutPosition).getExpense();
+                Expense changedExpense = Expense.fromExpenseWithCategory(expenses.get(layoutPosition));
                 Object selectedItem = categorySpinner.getSelectedItem();
                 Category category = (Category) selectedItem;
                 if (!expenseSum.getText().toString().isEmpty() && category != null) {
@@ -102,9 +101,9 @@ public class AllExpenseAdapter extends RecyclerView.Adapter<AllExpenseAdapter.Vi
                 dialog.cancel();
             }
         });
-        expenseDate.setText(DateUtils.convertDateToString(expense.getExpense().getDate()));
-        expenseSum.setText(String.valueOf(expense.getExpense().getSum()));
-        expenseName.setText(expense.getExpense().getName());
+        expenseDate.setText(DateUtils.convertDateToString(expense.getDate()));
+        expenseSum.setText(String.valueOf(expense.getSum()));
+        expenseName.setText(expense.getName());
         dialog.show();
     }
 

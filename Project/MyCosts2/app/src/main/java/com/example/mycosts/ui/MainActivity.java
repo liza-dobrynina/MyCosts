@@ -9,8 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.mycosts.R;
-import com.example.mycosts.ui.categories.AllCategoriesFragment;
-import com.example.mycosts.ui.expenses.AllExpensesFragment;
+import com.example.mycosts.ui.categories.CategoriesFragment;
+import com.example.mycosts.ui.expenses.ExpensesFragment;
 import com.example.mycosts.ui.report.ReportFragment;
 
 
@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
             switch (menuItem.getItemId()) {
                 case R.id.all_expense:
                     fragmentTransaction.
-                            replace(R.id.fragmentPlace, new AllExpensesFragment())
+                            replace(R.id.fragmentPlace, new ExpensesFragment())
                             .commit();
                     return true;
                 case R.id.category:
                     fragmentTransaction.
-                            replace(R.id.fragmentPlace, new AllCategoriesFragment())
+                            replace(R.id.fragmentPlace, new CategoriesFragment())
                             .commit();
                     return true;
                 case R.id.report:

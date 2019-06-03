@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,16 +13,15 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.mycosts.R;
-import com.example.mycosts.db.entities.Category;
+import com.example.mycosts.api.model.Category;
 
 import java.util.List;
 
-public class AllCategoriesFragment extends Fragment implements AllCategoriesContract {
+public class CategoriesFragment extends Fragment implements CategoriesContract {
 
     private RecyclerView recyclerView;
-    private FloatingActionButton addCategory;
-    private AllCategoriesPresenter presenter;
-    private AllCategoryAdapter adapter;
+    private CategoriesPresenter presenter;
+    private CategoriesAdapter adapter;
 
     @Nullable
     @Override
@@ -32,9 +30,8 @@ public class AllCategoriesFragment extends Fragment implements AllCategoriesCont
         View view = inflater.inflate(R.layout.fragment_all_categories, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerView);
-        addCategory = view.findViewById(R.id.addCategory);
 
-        addCategory.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.addCategory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addNewCategory(v);
@@ -42,11 +39,10 @@ public class AllCategoriesFragment extends Fragment implements AllCategoriesCont
 
         });
 
-        AllCategoriesModel allCategoriesModel = new AllCategoriesModel();
 
-        presenter = new AllCategoriesPresenter(allCategoriesModel);
+        presenter = new CategoriesPresenter();
         presenter.attachView(this);
-        presenter.viewIsReady();
+        presenter.prepareView();
         return view;
     }
 
@@ -81,7 +77,7 @@ public class AllCategoriesFragment extends Fragment implements AllCategoriesCont
     @Override
     public void setAdapter(List<Category> categories) {
         if (getActivity() != null) {
-            adapter = new AllCategoryAdapter(getContext(), presenter, categories);
+            adapter = new CategoriesAdapter(getContext(), presenter, categories);
             recyclerView.setAdapter(adapter);
         }
     }

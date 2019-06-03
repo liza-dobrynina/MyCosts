@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,23 +15,20 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.mycosts.R;
-import com.example.mycosts.db.entities.Category;
-import com.example.mycosts.db.entities.CategorySum;
-import com.example.mycosts.db.entities.Expense;
-import com.example.mycosts.db.entities.ExpenseWithCategory;
+import com.example.mycosts.api.model.Category;
+import com.example.mycosts.api.model.Expense;
+import com.example.mycosts.api.model.ExpenseWithCategory;
 import com.example.mycosts.utils.DateUtils;
 import com.example.mycosts.utils.UIUtils;
 
 import java.util.Date;
 import java.util.List;
 
-public class AllExpensesFragment extends Fragment implements AllExpenseContract {
+public class ExpensesFragment extends Fragment implements ExpensesContract {
 
     private RecyclerView recyclerView;
-    private FloatingActionButton addExpense;
-
-    private AllExpensePresenter presenter;
-    private AllExpenseAdapter adapter;
+    private ExpensesPresenter presenter;
+    private ExpensesAdapter adapter;
 
     @Nullable
     @Override
@@ -40,23 +36,21 @@ public class AllExpensesFragment extends Fragment implements AllExpenseContract 
         getActivity().setTitle("Мои расходы");
         View view = inflater.inflate(R.layout.fragment_all_expanses, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
-        addExpense = view.findViewById(R.id.addExpense);
-        addExpense.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.addExpense).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addNewExpenseClick(v);
             }
         });
-        AllExpenseModel model = new AllExpenseModel();
-        presenter = new AllExpensePresenter(model);
+        presenter = new ExpensesPresenter();
         presenter.attachView(this);
-        presenter.viewIsReady();
+        presenter.prepareView();
         return view;
     }
 
     @Override
     public void setAdapter(List<ExpenseWithCategory> expenses) {
-        adapter = new AllExpenseAdapter(getContext(), presenter, expenses);
+        adapter = new ExpensesAdapter(getContext(), presenter, expenses);
         recyclerView.setAdapter(adapter);
     }
 
@@ -83,7 +77,6 @@ public class AllExpensesFragment extends Fragment implements AllExpenseContract 
                         Integer sum = Integer.parseInt(expenseSum.getText().toString());
                         Date date = DateUtils.convertStringToDate(expenseDate.getText().toString());
                         String name = expenseName.getText().toString();
-//                        category.getExpenses().add(new Expense(name, date, sum, category));
                         Expense expense = new Expense(name, date, sum, category.getId());
                         presenter.addExpense(expense);
                     }
@@ -132,10 +125,10 @@ public class AllExpensesFragment extends Fragment implements AllExpenseContract 
     }
 
     @Override
-    public void showWarning(CategorySum categorySum) {
+    public void showWarning(Category category) {
         new AlertDialog.Builder(getContext())
                 .setTitle("Превышен порог")
-                .setMessage(String.format("Превышен порог по категории!\n Сумма расходов: %s\n Порог категории: %s", categorySum.getActualSum(), categorySum.getMaxSum()))
+                .setMessage(String.format("Превышен порог по категории!\n Сумма расходов: %s\n Порог категории: %s", category.getCurrentSum(), category.getMaxSum()))
                 .setPositiveButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();

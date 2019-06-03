@@ -3,13 +3,12 @@ package com.example.mycosts.ui.expenses;
 import android.view.View;
 import android.widget.Spinner;
 
-import com.example.mycosts.db.entities.Category;
-import com.example.mycosts.db.entities.CategorySum;
-import com.example.mycosts.db.entities.ExpenseWithCategory;
+import com.example.mycosts.api.model.Category;
+import com.example.mycosts.api.model.ExpenseWithCategory;
 
 import java.util.List;
 
-public interface AllExpenseContract {
+public interface ExpensesContract {
     void setAdapter(List<ExpenseWithCategory> expenses);
 
     void addNewExpenseClick(View v);
@@ -26,5 +25,5 @@ public interface AllExpenseContract {
 
     void changeData(List<ExpenseWithCategory> expenseWithCategories);
 
-    void showWarning(CategorySum categorySum);
+    void showWarning(Category category);
 }

@@ -1,27 +1,27 @@
 package com.example.mycosts;
 
 import android.app.Application;
-import android.arch.persistence.room.Room;
 
-import com.example.mycosts.db.MyCostsDatabase;
+import com.example.mycosts.api.ApiClient;
+import com.example.mycosts.api.ApiClientImpl;
 
 public class App extends Application {
 
     public static App instance;
-    private MyCostsDatabase database;
+    private ApiClient apiClient;
 
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
-        database = Room.databaseBuilder(this, MyCostsDatabase.class, "mycosts.db").build();
+        apiClient = new ApiClientImpl(this);
     }
 
     public static App getInstance() {
         return instance;
     }
 
-    public MyCostsDatabase getDatabase() {
-        return database;
+    public ApiClient getApiClient() {
+        return apiClient;
     }
 }
