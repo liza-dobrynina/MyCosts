@@ -20,3 +20,4 @@
 - [Тест-кейсы](https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/ТестКейсы.xlsx)
 - [Видео](https://drive.google.com/open?id=1S2haa6A-gyx8zYf08Rgja4eaXWIopESe)
 - [Swagger](http://157.230.20.13:5000/docs)
+- [Презентация](https://github.com/liza-dobrynina/MyCosts/blob/master/Документация/Презентация.pptx)
